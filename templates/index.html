@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}d.fkk — catalog{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <h1>d.fkk</h1>
+    <p>Dark fashion catalog with soft micro-animations and fast mobile UX.</p>
+  </div>
+  <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1400&q=80" alt="Hero">
+</section>
+
+<section id="catalog" class="catalog">
+  {% for product in products %}
+    <article class="product-card">
+      <a href="{{ url_for('product_details', product_id=product.id) }}">
+        <img src="{{ product.image }}" alt="{{ product.title }}">
+      </a>
+      <div class="product-meta">
+        <p>{{ product.title }}</p>
+        <p class="price">{{ "{:,.0f}".format(product.price).replace(',', '.') }} rub</p>
+      </div>
+      <button class="btn" data-add-to-cart="{{ product.id }}">Add to cart</button>
+    </article>
+  {% endfor %}
+</section>
+{% endblock %}

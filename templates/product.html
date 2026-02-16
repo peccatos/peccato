@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}{{ product.title }} — d.fkk{% endblock %}
+{% block content %}
+<section class="product-layout">
+  <img class="product-main" src="{{ product.image }}" alt="{{ product.title }}">
+  <div class="product-info">
+    <p class="muted">Lookbook / Collections / {{ product.title }}</p>
+    <h2>{{ product.title }}</h2>
+    <p class="big-price">{{ "{:,.0f}".format(product.price).replace(',', '.') }} rub</p>
+    <p>{{ product.description }}</p>
+    <button class="btn" data-add-to-cart="{{ product.id }}">Add to cart</button>
+  </div>
+</section>
+{% endblock %}

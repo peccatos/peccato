@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}admin panel{% endblock %}
+{% block content %}
+<section class="admin-header">
+  <h2>Admin panel</h2>
+  <form method="post" action="{{ url_for('admin_logout') }}"><button class="link-btn">Logout</button></form>
+</section>
+
+<section class="admin-columns">
+  <div>
+    <h3>Products</h3>
+    {% for product in products %}
+      <form method="post" action="{{ url_for('admin_product_update', product_id=product.id) }}" class="admin-form card">
+        <label>Title<input name="title" value="{{ product.title }}" required></label>
+        <label>Price<input name="price" type="number" value="{{ product.price }}" required></label>
+        <label>Image URL<input name="image" value="{{ product.image }}" required></label>
+        <label>Description<textarea name="description" rows="2" required>{{ product.description }}</textarea></label>
+        <button class="btn">Update</button>
+      </form>
+    {% endfor %}
+
+    <h4>Новый товар</h4>
+    <form method="post" action="{{ url_for('admin_product_create') }}" class="admin-form card">
+      <label>Title<input name="title" required></label>
+      <label>Price<input name="price" type="number" required></label>
+      <label>Image URL<input name="image" required></label>
+      <label>Description<textarea name="description" rows="2" required></textarea></label>
+      <button class="btn">Create</button>
+    </form>
+  </div>
+
+  <div>
+    <h3>Последние заказы</h3>
+    {% for order in orders %}
+      <article class="card">
+        <p>#{{ order.id }} — {{ order.status }}</p>
+        <p>{{ order.customer_name }} / {{ order.customer_phone }}</p>
+        <p>{{ "{:,.0f}".format(order.total).replace(',', '.') }} rub</p>
+        <details>
+          <summary>Товары</summary>
+          <pre>{{ order.items_json }}</pre>
+        </details>
+      </article>
+    {% else %}
+      <p class="muted">Заказов пока нет.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
