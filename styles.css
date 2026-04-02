@@ -1,0 +1,93 @@
+:root {
+  --bg: #0f1226;
+  --card: #1b2042;
+  --accent: #58d6ff;
+  --text: #f5f7ff;
+  --muted: #c5c9e6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #25306b 0%, var(--bg) 55%);
+  line-height: 1.6;
+}
+
+.landing {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: color-mix(in oklab, var(--card) 92%, black 8%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero h1 {
+  margin: 0.5rem 0;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  line-height: 1.2;
+}
+
+.subtitle,
+.card p,
+.card li {
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-block;
+  margin: 0;
+  background: rgba(88, 214, 255, 0.15);
+  color: var(--accent);
+  border: 1px solid rgba(88, 214, 255, 0.35);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  color: #0d1a2f;
+  background: var(--accent);
+  font-weight: 700;
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0.45rem;
+  font-size: 1.15rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.note {
+  margin-bottom: 0;
+  color: #dff8ff;
+  font-weight: 600;
+}
