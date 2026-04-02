@@ -69,6 +69,22 @@ body {
   outline-offset: 2px;
 }
 
+
+.source-link {
+  margin: 0;
+}
+
+.source-link a {
+  color: #b9f0ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+
+.source-link a:hover {
+  color: #ffffff;
+}
+
 .hero h1 {
   margin: 0.5rem 0;
   font-size: clamp(1.6rem, 4vw, 2.6rem);
