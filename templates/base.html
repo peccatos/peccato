@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <title>{% block title %}d.fkk store{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<header class="nav shell">
+  <a href="{{ url_for('index') }}">[ home ]</a>
+  <a href="{{ url_for('index') }}#catalog">[ catalog ]</a>
+  <a href="{{ url_for('cart') }}">cart [ {{ cart_count }} ]</a>
+</header>
+
+<main class="shell fade-in">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul class="flash-list">
+      {% for category, message in messages %}
+        <li class="flash {{ category }}">{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="shell footer-grid">
+  <div>
+    <p class="muted">Connect</p>
+    <p>Telegram</p><p>Instagram</p><p>TikTok</p>
+  </div>
+  <div>
+    <p class="muted">Customer Care</p>
+    <p>FAQS</p><p>Shipping & Delivery</p><p>Returns</p>
+  </div>
+  <div>
+    <p class="muted">Contact us</p>
+    <p>mail@dfkk.com</p>
+  </div>
+  <div class="footer-end">
+    <p>©{{ year }} d.fkk</p>
+    <p>Terms & Conditions</p>
+    <p>Privacy Policy</p>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

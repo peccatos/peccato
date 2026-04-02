@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}order created{% endblock %}
+{% block content %}
+<section class="success-box">
+  <h2>Заказ #{{ order_id }} создан</h2>
+  <p>Сумма: {{ "{:,.0f}".format(subtotal).replace(',', '.') }} rub.</p>
+  <p>Следующий шаг: оплата через кассу.</p>
+  <a class="btn" href="{{ payment_link }}" target="_blank" rel="noopener noreferrer">Оплатить</a>
+</section>
+{% endblock %}
