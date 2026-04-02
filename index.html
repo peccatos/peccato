@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoRa for Students</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="landing">
+      <header class="topbar card">
+        <strong data-i18n="logo">LoRa mini-landing</strong>
+        <div class="lang-picker">
+          <span class="lang-label" data-i18n="lang_label">Языки:</span>
+          <div class="lang-switch" role="group" aria-label="Language switcher">
+            <button class="lang-btn active" data-lang="ru" type="button" aria-label="Русский">
+              Русский
+            </button>
+            <button class="lang-btn" data-lang="en" type="button" aria-label="English">
+              English
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <p class="source-link">
+        <a
+          href="https://ru.wikipedia.org/wiki/LoRa"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="wiki_link"
+          data-i18n-href="wiki_href"
+        >
+          📚 Первоисточник: статья в Wikipedia про LoRa
+        </a>
+      </p>
+
+      <section class="hero card">
+        <p class="badge" data-i18n="badge">Связь будущего</p>
+        <h1 data-i18n="hero_title">LoRa — радиосвязь на большие расстояния</h1>
+        <p class="subtitle" data-i18n="hero_subtitle">
+          Представь: датчик в школьной теплице отправляет температуру на другой конец города без
+          интернета и почти без батарейки.
+        </p>
+        <a class="button" href="#facts" data-i18n="hero_cta">Узнать за 1 минуту</a>
+      </section>
+
+      <section id="facts" class="facts-grid">
+        <article class="card">
+          <h2 data-i18n="what_title">Что это?</h2>
+          <p data-i18n="what_text">
+            LoRa (Long Range) — технология передачи маленьких сообщений по радио на километры,
+            даже если сигнал слабый.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2 data-i18n="where_title">Где пригодится?</h2>
+          <ul>
+            <li data-i18n="where_1">Умная школа: контроль света и температуры.</li>
+            <li data-i18n="where_2">Экология: датчики воздуха и влажности.</li>
+            <li data-i18n="where_3">Проекты STEM: «умные» рюкзаки, теплицы, метеостанции.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2 data-i18n="why_title">Почему школьникам это круто?</h2>
+          <p data-i18n="why_text">
+            Это простой вход в IoT: можно собрать свой проект на Arduino/ESP32 и показать реальное
+            применение физики и программирования.
+          </p>
+        </article>
+      </section>
+
+      <section class="cta card">
+        <h2 data-i18n="challenge_title">Мини-челлендж</h2>
+        <p data-i18n="challenge_text">
+          Собери 2 устройства LoRa: одно измеряет температуру, второе показывает её на экране.
+          Дальность теста: чем дальше — тем интереснее!
+        </p>
+        <p class="note" data-i18n="challenge_note">
+          ⚡ Главное: маленькие сообщения, зато очень далеко и экономно.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
